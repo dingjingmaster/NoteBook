@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NoteBook</class>
+ <widget class="QMainWindow" name="NoteBook">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>520</width>
+    <height>324</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>520</width>
+    <height>324</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>NoteBook</string>
+  </property>
+  <property name="statusTip">
+   <string>NoteBookPlus</string>
+  </property>
+  <widget class="QWidget" name="mainWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTextEdit" name="mainTextEdit">
+      <property name="statusTip">
+       <string>输入中...</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="mainMenuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>520</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="mainFileMenu">
+    <property name="statusTip">
+     <string>文件操作</string>
+    </property>
+    <property name="title">
+     <string>文件(&amp;F)</string>
+    </property>
+    <addaction name="fileNewAction"/>
+    <addaction name="fileOpenAction"/>
+    <addaction name="fileSaveAction"/>
+    <addaction name="fileSaveOtherAction"/>
+    <addaction name="separator"/>
+    <addaction name="fileExitAction"/>
+   </widget>
+   <widget class="QMenu" name="mainEditMenu">
+    <property name="statusTip">
+     <string>编辑操作</string>
+    </property>
+    <property name="title">
+     <string>编辑(&amp;E)</string>
+    </property>
+    <addaction name="editUndoAction"/>
+    <addaction name="separator"/>
+    <addaction name="editCutAction"/>
+    <addaction name="editCopyAction"/>
+    <addaction name="editPasteAction"/>
+    <addaction name="editDeleteAction"/>
+    <addaction name="separator"/>
+    <addaction name="editFindAction"/>
+    <addaction name="editFindNextAction"/>
+    <addaction name="editReplaceAction"/>
+    <addaction name="editJumpAction"/>
+    <addaction name="separator"/>
+    <addaction name="editSelectAllAction"/>
+    <addaction name="editTimeAction"/>
+   </widget>
+   <widget class="QMenu" name="mainAboutMenu">
+    <property name="statusTip">
+     <string>关于</string>
+    </property>
+    <property name="title">
+     <string>关于(&amp;A)</string>
+    </property>
+    <addaction name="setSetingAction"/>
+    <addaction name="aboutAboutAction"/>
+   </widget>
+   <widget class="QMenu" name="mainHelpMenu">
+    <property name="statusTip">
+     <string>帮助</string>
+    </property>
+    <property name="title">
+     <string>帮助(&amp;H)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="mainRunMenu">
+    <property name="statusTip">
+     <string>运行程序</string>
+    </property>
+    <property name="title">
+     <string>运行(&amp;R)</string>
+    </property>
+    <addaction name="runRunAction"/>
+   </widget>
+   <addaction name="mainFileMenu"/>
+   <addaction name="mainEditMenu"/>
+   <addaction name="mainRunMenu"/>
+   <addaction name="mainAboutMenu"/>
+   <addaction name="mainHelpMenu"/>
+  </widget>
+  <widget class="QStatusBar" name="mainStatuBar">
+   <property name="statusTip">
+    <string>状态栏</string>
+   </property>
+  </widget>
+  <action name="fileNewAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/19.png</normaloff>:/new/prefix1/source/picture/19.png</iconset>
+   </property>
+   <property name="text">
+    <string>新建(&amp;N)</string>
+   </property>
+   <property name="toolTip">
+    <string>新建(N)</string>
+   </property>
+   <property name="statusTip">
+    <string>新建文件操作</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="fileOpenAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/30.png</normaloff>:/new/prefix1/source/picture/30.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开(&amp;O)...</string>
+   </property>
+   <property name="statusTip">
+    <string>打开文件操作</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="fileSaveAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/29.png</normaloff>:/new/prefix1/source/picture/29.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存(&amp;S)</string>
+   </property>
+   <property name="statusTip">
+    <string>保存文件操作</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="fileSaveOtherAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/29.png</normaloff>:/new/prefix1/source/picture/29.png</iconset>
+   </property>
+   <property name="text">
+    <string>另存为(&amp;O)...</string>
+   </property>
+   <property name="statusTip">
+    <string>将文件保存在其他路径</string>
+   </property>
+  </action>
+  <action name="fileExitAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/19.png</normaloff>:/new/prefix1/source/picture/19.png</iconset>
+   </property>
+   <property name="text">
+    <string>退出(&amp;E)</string>
+   </property>
+   <property name="statusTip">
+    <string>退出NoteBookPlus</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="editUndoAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/19.png</normaloff>:/new/prefix1/source/picture/19.png</iconset>
+   </property>
+   <property name="text">
+    <string>撤消(&amp;U)</string>
+   </property>
+   <property name="iconText">
+    <string>撤消(U)</string>
+   </property>
+   <property name="statusTip">
+    <string>撤消上一步操作</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="editCutAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/19.png</normaloff>:/new/prefix1/source/picture/19.png</iconset>
+   </property>
+   <property name="text">
+    <string>剪切(&amp;T)</string>
+   </property>
+   <property name="statusTip">
+    <string>执行剪切文本操作</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="editCopyAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/19.png</normaloff>:/new/prefix1/source/picture/19.png</iconset>
+   </property>
+   <property name="text">
+    <string>复制(&amp;C)</string>
+   </property>
+   <property name="statusTip">
+    <string>复制选中文本操作</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="editPasteAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/19.png</normaloff>:/new/prefix1/source/picture/19.png</iconset>
+   </property>
+   <property name="text">
+    <string>粘贴(&amp;P)</string>
+   </property>
+   <property name="toolTip">
+    <string>粘贴(P)</string>
+   </property>
+   <property name="statusTip">
+    <string>粘贴文本操作</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="editDeleteAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/19.png</normaloff>:/new/prefix1/source/picture/19.png</iconset>
+   </property>
+   <property name="text">
+    <string>删除(&amp;L)</string>
+   </property>
+   <property name="statusTip">
+    <string>删除选中文本</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="editFindAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/19.png</normaloff>:/new/prefix1/source/picture/19.png</iconset>
+   </property>
+   <property name="text">
+    <string>查找(&amp;F)...</string>
+   </property>
+   <property name="statusTip">
+    <string>查找关键字</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="editFindNextAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/19.png</normaloff>:/new/prefix1/source/picture/19.png</iconset>
+   </property>
+   <property name="text">
+    <string>查找下一个(&amp;N)...</string>
+   </property>
+   <property name="statusTip">
+    <string>查找下一个关键字</string>
+   </property>
+  </action>
+  <action name="editReplaceAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/19.png</normaloff>:/new/prefix1/source/picture/19.png</iconset>
+   </property>
+   <property name="text">
+    <string>替换(&amp;R)...</string>
+   </property>
+   <property name="statusTip">
+    <string>替换文本</string>
+   </property>
+  </action>
+  <action name="editJumpAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/19.png</normaloff>:/new/prefix1/source/picture/19.png</iconset>
+   </property>
+   <property name="text">
+    <string>转到(&amp;G)...</string>
+   </property>
+   <property name="statusTip">
+    <string>转到指定位置</string>
+   </property>
+  </action>
+  <action name="editSelectAllAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/19.png</normaloff>:/new/prefix1/source/picture/19.png</iconset>
+   </property>
+   <property name="text">
+    <string>全选(&amp;A)</string>
+   </property>
+   <property name="statusTip">
+    <string>选中当前打开的文件中所有字符</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="editTimeAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/19.png</normaloff>:/new/prefix1/source/picture/19.png</iconset>
+   </property>
+   <property name="text">
+    <string>时间/日期(&amp;D)</string>
+   </property>
+   <property name="statusTip">
+    <string>时间日期</string>
+   </property>
+  </action>
+  <action name="setSetingAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/19.png</normaloff>:/new/prefix1/source/picture/19.png</iconset>
+   </property>
+   <property name="text">
+    <string>设置</string>
+   </property>
+   <property name="statusTip">
+    <string>设置</string>
+   </property>
+  </action>
+  <action name="aboutAboutAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/25.png</normaloff>:/new/prefix1/source/picture/25.png</iconset>
+   </property>
+   <property name="text">
+    <string>关于</string>
+   </property>
+   <property name="statusTip">
+    <string>关于</string>
+   </property>
+  </action>
+  <action name="runRunAction">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/source/picture/19.png</normaloff>:/new/prefix1/source/picture/19.png</iconset>
+   </property>
+   <property name="text">
+    <string>运行(&amp;R)</string>
+   </property>
+   <property name="statusTip">
+    <string>可以运行c或者c++程序(需要MinGW支持)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
